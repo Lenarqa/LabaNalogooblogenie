@@ -112,3 +112,12 @@
     background-color: #fff;
     border: 1px solid #005bae;
 }
+
+/* footer */
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+}
