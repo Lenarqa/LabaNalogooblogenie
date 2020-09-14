@@ -168,6 +168,37 @@ function getResult(){
 
     // находим размер налога
     nalogSize = nalogRate * horsPower * moungthTotal/12 * upperRate - avancePay[0] - avancePay[1] - avancePay[2];
+
+    let result = document.getElementById('result');
+    console.log(result)
+    if(result.innerText != ''){
+       result.innerText = '';
+       result.innerHTML = `
+            <div class="left">
+                <h2>Авансовые платежи:</h2>
+                <h3>Первый квартал: ${avancePay[0].toFixed(2)}</h3>
+                <h3>Второй квартал: ${avancePay[1].toFixed(2)}</h3>
+                <h3>Третий квартал: ${avancePay[2].toFixed(2)}</h3>
+            </div>
+
+            <div class="left">
+                <h2>Сумма налога: ${nalogSize.toFixed(2)}</h2>
+            </div>
+            `;
+    }else{
+        result.innerHTML = `
+            <div class="left">
+                <h2>Авансовые платежи:</h2>
+                <h3>Первый квартал: ${avancePay[0].toFixed(2)}</h3>
+                <h3>Второй квартал: ${avancePay[1].toFixed(2)}</h3>
+                <h3>Третий квартал: ${avancePay[2].toFixed(2)}</h3>
+            </div>
+
+            <div class="left">
+                <h2>Сумма налога: ${nalogSize.toFixed(2)}</h2>
+            </div>
+            `;
+    }
     
     //debugLog
     console.log('День регистрации = ' + dayReg);
