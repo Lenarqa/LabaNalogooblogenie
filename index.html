@@ -28,12 +28,46 @@
 
     <div class="container">
         <div class="item-list">
-            <h2 class="list-text">Для подсчета налога выбирите:</h2>
+            <h2>Для подсчета налога выбирите:</h2>
             <div class="item">
                 <h3 class="item-name">дату регистрации</h3>
-                <input class="item-input" type="date" >
+                <input id="date" class="item-input" type="date" >
             </div>
+
+            <div class="item">
+                <h3 class="item-name">дату выпуска</h3>
+                <input id="releaseDate" class="item-input" type="text" placeholder="Например: 2015">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Стоимость (млн.руб)</h3>
+                <input id="cost" class="item-input" type="text" placeholder="Например: 3,5">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Мощность двигателя (л.c)</h3>
+                <input id="horsPower" class="item-input" type="text" placeholder="Например: 120">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Год расчета</h3>
+                <input id="yearСalculation" class="item-input" type="text" placeholder="Например: 2020">
+            </div>
+            
+            <div class="item">
+                <h3 class="item-name">Месяц расчета</h3>
+                <input id="mounthСalculation" class="item-input" type="text" placeholder="Например: 12">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Возраст автомобиля</h3>
+                <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
+            </div>
+
+            <button class="btn" onclick="getResult()">Посчитать налог</button>
         </div>
     </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
