@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <title>Laba №1</title>
 </head>
 <body>
@@ -27,9 +28,12 @@
     </header>
 
     <div class="container">
-        <div class="item-list">
-            <h2>Важно: все дробные числа нужно писать через точку (3.2)</h2>
-            <h2>Для подсчета налога выбирите:</h2>
+        <div class="item-list" id="item-list">
+            <div class="item-list-text">
+                <h2>Важно: все дробные числа нужно писать через точку (3.2)</h2>
+                <h2>Для подсчета налога выбирите:</h2>
+            </div>
+            
             <div class="item">
                 <h3 class="item-name">дату регистрации</h3>
                 <input id="date" class="item-input" type="date" >
@@ -42,7 +46,7 @@
 
             <div class="item">
                 <h3 class="item-name">Стоимость (млн.руб)</h3>
-                <input id="cost" class="item-input" type="text" placeholder="Например: 3,5">
+                <input id="cost" class="item-input" type="text" placeholder="Например: 3.5">
             </div>
 
             <div class="item">

@@ -217,3 +217,15 @@ function getResult(){
     console.log('Количество месяцев во владении = ' + moungthTotal);
     console.log('Размер налога = ' + nalogSize);
 }
+
+// animations
+var tl = gsap.timeline();
+tl.fromTo(".header", 1, {opacity:0, y: -100}, {opacity: 1, y: 0, ease:'Power2.easeInOut'});
+tl.fromTo(".item-list-text", 1, {opacity:0, y: -100}, {opacity: 1, y: 0, ease:'Power2.easeInOut'}, '-=0.4');
+
+let items = document.getElementById('item-list');
+for (let i = 1; i < items.children.length; i++) {
+    tl.fromTo(items.children[i], .4, {opacity:0, y: -100}, {opacity:1, y: 0, ease:'Power2.easeInOut'});
+}
+
+tl.fromTo(".footer", 1, {opacity:0, x: -100}, {opacity: 1, x: 0, ease:'Power2.easeInOut'});
