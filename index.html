@@ -3,84 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-    <title>Laba №1</title>
+    <link rel="stylesheet" href="./css/menu.css">
+    <title>Лабораторные работы</title>
 </head>
 <body>
-    <header class="header">
-        <div class="autors">
-            <h2>Выполняли:</h2>
-            <h2>Жукова Ксения</h2>
-            <h2>Валиев Ленар</h2>
-            <h2>Группа: 447-1</h2>
-        </div>
-
-        <div class="header-name">Лабораторная работа</div>
-
-        <div class="logo">
-            <h2 class="main-text">Тусур</h2>
-            <div class="small-logo-text">
-                <h2>Tusur</h2>
-                <h2>university</h2>
-            </div>
-        </div>
-    </header>
-
     <div class="container">
-        <div class="item-list" id="item-list">
-            <div class="item-list-text">
-                <h2>Важно: все дробные числа нужно писать через точку (3.2)</h2>
-                <h2>Для подсчета налога выбирите:</h2>
-            </div>
-            
-            <div class="item">
-                <h3 class="item-name">дату регистрации</h3>
-                <input id="date" class="item-input" type="date" >
-            </div>
+        <div class="item">
+            <div class="wrapper"></div>
+            <a href="./pages/car.html">Транспортный налог</a>
+        </div>
+        
+        <div class="item">
+            <div class="wrapper"></div>
+            <a href="./pages/car.html">Водный налог</a>
+        </div>
 
-            <div class="item">
-                <h3 class="item-name">дату выпуска</h3>
-                <input id="releaseDate" class="item-input" type="text" placeholder="Например: 2015">
-            </div>
-
-            <div class="item">
-                <h3 class="item-name">Стоимость (млн.руб)</h3>
-                <input id="cost" class="item-input" type="text" placeholder="Например: 3.5">
-            </div>
-
-            <div class="item">
-                <h3 class="item-name">Мощность двигателя (л.c)</h3>
-                <input id="horsPower" class="item-input" type="text" placeholder="Например: 120">
-            </div>
-
-            <div class="item">
-                <h3 class="item-name">Год расчета</h3>
-                <input id="yearСalculation" class="item-input" type="text" placeholder="Например: 2020">
-            </div>
-            
-            <div class="item">
-                <h3 class="item-name">Месяц расчета</h3>
-                <input id="mounthСalculation" class="item-input" type="text" placeholder="Например: 12">
-            </div>
-
-            <div class="item">
-                <h3 class="item-name">Возраст автомобиля</h3>
-                <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
-            </div>
-
-            <button class="btn" onclick="getResult()">Посчитать налог</button>
+        <div class="item">
+            <div class="wrapper"></div>
+            <a href="./pages/car.html">Земельный налог</a>
         </div>
     </div>
-
-    <div id="result">
-        
-    </div>
-
-    <footer class="footer">
-        <img src="./img/logo.png" alt="logo-tusur">
-    </footer>
-
-    <script src="main.js"></script>
+    
+    
 </body>
 </html>
