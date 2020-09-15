@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/water.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <title>Транспортный налог</title>
 </head>
@@ -16,7 +17,7 @@
             <h2>Группа: 447-1</h2>
         </div>
 
-        <div class="header-name">Транспортный налог</div>
+        <div class="header-name">Расчет водного налога</div>
 
         <div class="logo">
             <h2 class="main-text">Тусур</h2>
@@ -35,37 +36,62 @@
             </div>
             
             <div class="item">
-                <h3 class="item-name">Дата регистрации</h3>
-                <input id="date" class="item-input" type="date" >
+                <h3 class="item-name">Забор воды из:</h3>
+                <select id="waterPoint" class="list">
+                    <option>Озера, реки</option>
+                    <option>Море</option>
+                </select>
             </div>
 
             <div class="item">
-                <h3 class="item-name">Дата выпуска</h3>
+                <h3 class="item-name">Налоговая база</h3>
                 <input id="releaseDate" class="item-input" type="text" placeholder="Например: 2015">
             </div>
 
             <div class="item">
-                <h3 class="item-name">Стоимость (млн.руб)</h3>
+                <h3 class="item-name">Годовая норма</h3>
                 <input id="cost" class="item-input" type="text" placeholder="Например: 3.5">
             </div>
 
             <div class="item">
-                <h3 class="item-name">Мощность двигателя (л.c)</h3>
-                <input id="horsPower" class="item-input" type="text" placeholder="Например: 120">
+                <h3 class="item-name">Экономический район</h3>
+                <select id="region" class="list" onchange="hello()">
+                    <option>Северный</option>
+                    <option>Северо-Западный</option>
+                    <option>Центральный</option>
+                    <option>Центрально-Черноземный</option>
+                    <option>Поволжский</option>
+                    <option>Северо-Кавказский</option>
+                    <option>Уральский</option>
+                    <option>Западно-Сибирский</option>
+                    <option>Восточно-Сибирский</option>
+                    <option>Дальневосточный</option>
+                    <option>Калининградская область</option>
+                </select>
             </div>
 
             <div class="item">
-                <h3 class="item-name">Год расчета</h3>
+                <h3 class="item-name">Бассейн реки, озера</h3>
                 <input id="yearСalculation" class="item-input" type="text" placeholder="Например: 2020">
             </div>
             
             <div class="item">
-                <h3 class="item-name">Месяц расчета</h3>
+                <h3 class="item-name">Забор воды</h3>
                 <input id="mounthСalculation" class="item-input" type="text" placeholder="Например: 12">
             </div>
 
             <div class="item">
-                <h3 class="item-name">Возраст автомобиля</h3>
+                <h3 class="item-name">Море</h3>
+                <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Год</h3>
+                <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Налог</h3>
                 <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
             </div>
 
@@ -83,6 +109,6 @@
         <img src="../img/logo.png" alt="logo-tusur">
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../js/water.js"></script>
 </body>
 </html>
