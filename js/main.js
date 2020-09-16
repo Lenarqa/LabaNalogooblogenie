@@ -201,31 +201,31 @@ function getResult(){
     }
     
     //debugLog
-    console.log('День регистрации = ' + dayReg);
-    console.log('Месяц регистрации = ' + mounthReg);
-    console.log('Год релиза = ' + releaseDate);
-    console.log('Стоимость = ' + cost);
-    console.log('Мощность = ' + horsPower);
-    console.log('Год расчета = ' + yearСalculation);
-    console.log('Месяц расчета = ' + mounthСalculation);
-    console.log('Возраст машины = ' + machineAge);
-    console.log("Налоговая ставка = " + nalogRate);
-    console.log("повышающий коэффициент = " + upperRate);
-    console.log('1 квартал = ' + avancePay[0]);
-    console.log('2 квартал = ' + avancePay[1]);
-    console.log('3 квартал = ' + avancePay[2]);
-    console.log('Количество месяцев во владении = ' + moungthTotal);
-    console.log('Размер налога = ' + nalogSize);
+    // console.log('День регистрации = ' + dayReg);
+    // console.log('Месяц регистрации = ' + mounthReg);
+    // console.log('Год релиза = ' + releaseDate);
+    // console.log('Стоимость = ' + cost);
+    // console.log('Мощность = ' + horsPower);
+    // console.log('Год расчета = ' + yearСalculation);
+    // console.log('Месяц расчета = ' + mounthСalculation);
+    // console.log('Возраст машины = ' + machineAge);
+    // console.log("Налоговая ставка = " + nalogRate);
+    // console.log("повышающий коэффициент = " + upperRate);
+    // console.log('1 квартал = ' + avancePay[0]);
+    // console.log('2 квартал = ' + avancePay[1]);
+    // console.log('3 квартал = ' + avancePay[2]);
+    // console.log('Количество месяцев во владении = ' + moungthTotal);
+    // console.log('Размер налога = ' + nalogSize);
 }
 
 // animations
-// var tl = gsap.timeline();
-// tl.fromTo(".header", 1, {opacity:0, y: -100}, {opacity: 1, y: 0, ease:'Power2.easeInOut'});
-// tl.fromTo(".item-list-text", 1, {opacity:0, y: -100}, {opacity: 1, y: 0, ease:'Power2.easeInOut'}, '-=0.4');
+var tl = gsap.timeline();
+tl.fromTo(".header", 1, {opacity:0, y: -100}, {opacity: 1, y: 0, ease:'Power2.easeInOut'});
+tl.fromTo(".item-list-text", 1, {opacity:0, y: -100}, {opacity: 1, y: 0, ease:'Power2.easeInOut'}, '-=0.4');
 
-// let items = document.getElementById('item-list');
-// for (let i = 1; i < items.children.length; i++) {
-//     tl.fromTo(items.children[i], .4, {opacity:0, y: -100}, {opacity:1, y: 0, ease:'Power2.easeInOut'});
-// }
+let items = document.getElementById('item-list');
+for (let i = 1; i < items.children.length; i++) {
+    tl.fromTo(items.children[i], .4, {opacity:0, y: -100}, {opacity:1, y: 0, ease:'Power2.easeInOut'});
+}
 
-// tl.fromTo(".footer", 1, {opacity:0, x: -100}, {opacity: 1, x: 0, ease:'Power2.easeInOut'});
+tl.fromTo(".footer", 1, {opacity:0, x: -100}, {opacity: 1, x: 0, ease:'Power2.easeInOut'});
