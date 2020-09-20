@@ -37,9 +37,9 @@
             
             <div class="item">
                 <h3 class="item-name">Забор воды из:</h3>
-                <select id="waterPoint" class="list">
-                    <option>Озера, реки</option>
-                    <option>Море</option>
+                <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
+                    <option value="0">Озера, реки</option>
+                    <option value="1">Море</option>
                 </select>
             </div>
 
@@ -106,7 +106,12 @@
 
             <div class="item">
                 <h3 class="item-name">Год</h3>
-                <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
+                <select id="sea" class="list">
+                    <option value="0">2018</option>
+                    <option value="1">2019</option>
+                    <option value="2">2020</option>
+                    <option value="3">2021</option>
+                </select>
             </div>
 
             <div class="item">
