@@ -45,17 +45,17 @@
 
             <div class="item">
                 <h3 class="item-name">Налоговая база</h3>
-                <input id="releaseDate" class="item-input" type="text" placeholder="Например: 2015">
+                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
             <div class="item">
                 <h3 class="item-name">Годовая норма</h3>
-                <input id="cost" class="item-input" type="text" placeholder="Например: 3.5">
+                <input id="yearNorma" class="item-input" type="text" placeholder="Например: 1500">
             </div>
 
             <div class="item">
                 <h3 class="item-name">Экономический район</h3>
-                <select id="region" class="list" onchange="hello()">
+                <select id="region" class="list" onchange="ChangeRegion()">
                     <option value="0">Северный</option>
                     <option value="1">Северо-Западный</option>
                     <option value="2">Центральный</option>
@@ -106,17 +106,12 @@
 
             <div class="item">
                 <h3 class="item-name">Год</h3>
-                <select id="sea" class="list">
+                <select id="year" class="list">
                     <option value="0">2018</option>
                     <option value="1">2019</option>
                     <option value="2">2020</option>
                     <option value="3">2021</option>
                 </select>
-            </div>
-
-            <div class="item">
-                <h3 class="item-name">Налог</h3>
-                <input id="machineAge" class="item-input" type="text" placeholder="Например: 5">
             </div>
 
             <button class="btn" onclick="getResult()">Посчитать налог</button>

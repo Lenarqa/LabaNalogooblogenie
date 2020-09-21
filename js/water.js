@@ -78,6 +78,8 @@ let nalogStavka = [
 
 let nalogStavkaSea = [8.28, 8.4, 6.36, 14.88, 14.88, 11.52, 4.8, 4.68, 4.44, 4.32, 5.28, 5.64, 7.68, 8.04];
 
+let yearKoef = [1.75, 2.01, 2.31, 2.66]
+
 function ChangeWaterPoint() {
     waterPointValue = document.getElementById("waterPoint").value;
     let itemList = document.getElementById("item-list");
@@ -98,7 +100,7 @@ function ChangeWaterPoint() {
     }
 }
 
-function hello() {
+function ChangeRegion() {
     if(pool.innerHTML != '') {
         pool.innerHTML = '';
     }
@@ -209,7 +211,104 @@ function hello() {
 }
 
 function getResult() {
-   if(waterPointValue == '0') {
-        let 
-   }
+    let bazaValue = document.getElementById('baza').value;
+    let yearNorma = document.getElementById('yearNorma').value;
+    let yearValue = document.getElementById('year').value;
+    console.log(bazaValue);
+    console.log(yearKoef[yearValue]);
+    // забор воды из водных объектов
+    if(baza > yearNorma) {
+        if(waterPointValue == '0') {
+            regionValue = document.getElementById('region').value;
+            pool = document.getElementById('pool').value;
+            let waterFrom = document.getElementById('waterFrom').value;
+    
+            let nalogStavkaValue = nalogStavka[parseInt(regionValue)][parseInt(pool)][parseInt(waterFrom)];
+            let nalog = bazaValue  * yearKoef[yearValue] * nalogStavkaValue / 1000;
+    
+            let result = document.getElementById('result');
+            if(result.innerText != ''){
+                result.innerText = '';
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }else{
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }
+       } else if(waterPointValue == '1') {
+           let seaValue = document.getElementById('sea').value;
+           console.log(seaValue);
+           let nalog = bazaValue * nalogStavkaSea[seaValue] * yearKoef[yearValue] / 1000;
+
+           let result = document.getElementById('result');
+            if(result.innerText != ''){
+                result.innerText = '';
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }else{
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }
+       }
+    }else {
+        if(waterPointValue == '0') {
+            regionValue = document.getElementById('region').value;
+            pool = document.getElementById('pool').value;
+            let waterFrom = document.getElementById('waterFrom').value;
+    
+            let nalogStavkaValue = nalogStavka[parseInt(regionValue)][parseInt(pool)][parseInt(waterFrom)];
+            let delta = bazaValue - yearNorma;
+            let nalog = (bazaValue - delta)   * yearKoef[yearValue] * nalogStavkaValue / 1000;
+            let sverhNorm = delta * yearKoef[yearValue] * 5 * nalogStavkaValue / 1000;
+            nalog += sverhNorm;
+    
+            let result = document.getElementById('result');
+            if(result.innerText != ''){
+                result.innerText = '';
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }else{
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }
+       } else if(waterPointValue == '1') {
+        let seaValue = document.getElementById('sea').value;
+        console.log(seaValue);
+        let nalog = bazaValue * nalogStavkaSea[seaValue] * yearKoef[yearValue] * 5 / 1000;
+
+        let result = document.getElementById('result');
+        if(result.innerText != ''){
+            result.innerText = '';
+            result.innerHTML = `
+                <div class="left">
+                    <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                </div>
+                `;
+        }else{
+             result.innerHTML = `
+                <div class="left">
+                    <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                </div>
+                `;
+        }
+    }
+    }
 }

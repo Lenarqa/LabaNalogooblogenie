@@ -170,7 +170,6 @@ function getResult(){
     nalogSize = nalogRate * horsPower * moungthTotal/12 * upperRate - avancePay[0] - avancePay[1] - avancePay[2];
 
     let result = document.getElementById('result');
-    console.log(result)
     if(result.innerText != ''){
        result.innerText = '';
        result.innerHTML = `
