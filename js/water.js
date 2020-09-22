@@ -78,7 +78,23 @@ let nalogStavka = [
 
 let nalogStavkaSea = [8.28, 8.4, 6.36, 14.88, 14.88, 11.52, 4.8, 4.68, 4.44, 4.32, 5.28, 5.64, 7.68, 8.04];
 
-let yearKoef = [1.75, 2.01, 2.31, 2.66]
+let yearKoef = [1.75, 2.01, 2.31, 2.66];
+
+function CloseAllItemList() {
+    let itemList = document.getElementById("item-list");
+    itemList.children[1].style.display = 'none';
+    itemList.children[2].style.display = 'none';
+    itemList.children[3].style.display = 'none';
+    itemList.children[4].style.display = 'none';
+    itemList.children[5].style.display = 'none';
+    itemList.children[6].style.display = 'none';
+    itemList.children[7].style.display = 'none';
+    itemList.children[8].style.display = 'none';
+}
+
+window.onload = () => {
+    CloseAllItemList();
+};
 
 function ChangeWaterPoint() {
     waterPointValue = document.getElementById("waterPoint").value;
@@ -96,6 +112,35 @@ function ChangeWaterPoint() {
             itemList.children[4].style.display = 'none';
             itemList.children[5].style.display = 'none';
             itemList.children[6].style.display = 'none';
+            break;
+    }
+}
+
+function ChangeNalog() {
+    let nalogValue = document.getElementById('nalog-value').value;
+    let itemList = document.getElementById("item-list");
+    switch (nalogValue) {
+        case '0':
+            itemList.children[1].style.display = 'flex';
+            itemList.children[2].style.display = 'flex';
+            itemList.children[3].style.display = 'flex';
+            itemList.children[4].style.display = 'flex';
+            itemList.children[5].style.display = 'flex';
+            itemList.children[6].style.display = 'flex';
+            itemList.children[7].style.display = 'flex';
+            itemList.children[8].style.display = 'flex';
+            break;
+        case '1':
+            CloseAllItemList();
+            //some code
+            break;
+        case '2':
+            CloseAllItemList();
+            //some code
+            break;
+        case '3':
+            CloseAllItemList();
+            //some code
             break;
     }
 }
