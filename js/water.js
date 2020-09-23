@@ -90,6 +90,19 @@ function CloseAllItemList() {
     itemList.children[6].style.display = 'none';
     itemList.children[7].style.display = 'none';
     itemList.children[8].style.display = 'none';
+    itemList.children[9].style.display = 'none';
+    itemList.children[10].style.display = 'none';
+    itemList.children[11].style.display = 'none';
+    itemList.children[12].style.display = 'none';
+    itemList.children[13].style.display = 'none';
+    itemList.children[14].style.display = 'none';
+    itemList.children[15].style.display = 'none';
+    itemList.children[16].style.display = 'none';
+    itemList.children[17].style.display = 'none';
+    itemList.children[18].style.display = 'none';
+    itemList.children[19].style.display = 'none';
+    itemList.children[20].style.display = 'none';
+    itemList.children[21].style.display = 'none';
 }
 
 window.onload = () => {
@@ -132,15 +145,25 @@ function ChangeNalog() {
             break;
         case '1':
             CloseAllItemList();
-            //some code
+            itemList.children[9].style.display = 'flex';
+            itemList.children[10].style.display = 'flex';
+            itemList.children[11].style.display = 'flex';
+            itemList.children[12].style.display = 'flex';
+            itemList.children[13].style.display = 'flex';
             break;
         case '2':
             CloseAllItemList();
-            //some code
+            itemList.children[14].style.display = 'flex';
+            itemList.children[15].style.display = 'flex';
+            itemList.children[16].style.display = 'flex';
             break;
         case '3':
             CloseAllItemList();
-            //some code
+            itemList.children[17].style.display = 'flex';
+            itemList.children[18].style.display = 'flex';
+            itemList.children[19].style.display = 'flex';
+            itemList.children[20].style.display = 'flex';
+            itemList.children[21].style.display = 'flex';
             break;
     }
 }

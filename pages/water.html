@@ -43,7 +43,7 @@
                 <h2>Важно: все дробные числа нужно писать через точку (3.2)</h2>
                 <h2>Для подсчета налога выбирите:</h2>
             </div>
-            
+            <!-- 1-8 -->
             <div class="item">
                 <h3 class="item-name">Забор воды из:</h3>
                 <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
@@ -121,6 +121,145 @@
                     <option value="2">2020</option>
                     <option value="3">2021</option>
                 </select>
+            </div>
+
+            <!-- 9 - 13-->
+            <div class="item">
+                <h3 class="item-name">Акватория</h3>
+                <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
+                    <option value="0">Экономический район</option>
+                    <option value="1">Моря РФ</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Экономический район</h3>
+                <select id="region" class="list" onchange="ChangeRegion()">
+                    <option value="0">Северный</option>
+                    <option value="1">Северо-Западный</option>
+                    <option value="2">Центральный</option>
+                    <option value="3">Волго-Вятский</option>
+                    <option value="4">Центрально-Черноземный</option>
+                    <option value="5">Поволжский</option>
+                    <option value="6">Северо-Кавказский</option>
+                    <option value="7">Уральский</option>
+                    <option value="8">Западно-Сибирский</option>
+                    <option value="9">Восточно-Сибирский</option>
+                    <option value="10">Дальневосточный</option>
+                    <option value="11">Калининградская область</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Море</h3>
+                <select id="sea" class="list">
+                    <option value="0">Балтийское</option>
+                    <option value="1">Белое</option>
+                    <option value="2">Баренцево</option>
+                    <option value="3">Азовское</option>
+                    <option value="4">Черное</option>
+                    <option value="5">Каспийское</option>
+                    <option value="6">Карское</option>
+                    <option value="7">Лаптевых</option>
+                    <option value="8">Восточно-Сибирское</option>
+                    <option value="9">Чукотское</option>
+                    <option value="10">Берингово</option>
+                    <option value="11">Тихий океан</option>
+                    <option value="12">Охотское</option>
+                    <option value="13">Японское</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Год</h3>
+                <select id="year" class="list">
+                    <option value="0">2018</option>
+                    <option value="1">2019</option>
+                    <option value="2">2020</option>
+                    <option value="3">2021</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Налоговая база</h3>
+                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+            </div>
+
+            <!-- 14 - 16-->
+            <div class="item">
+                <h3 class="item-name">Бассейн реки, озера, моря</h3>
+                <select id="sea" class="list">
+                    <option value="0">Балтийское</option>
+                    <option value="1">Белое</option>
+                    <option value="2">Баренцево</option>
+                    <option value="3">Азовское</option>
+                    <option value="4">Черное</option>
+                    <option value="5">Каспийское</option>
+                    <option value="6">Карское</option>
+                    <option value="7">Лаптевых</option>
+                    <option value="8">Восточно-Сибирское</option>
+                    <option value="9">Чукотское</option>
+                    <option value="10">Берингово</option>
+                    <option value="11">Тихий океан</option>
+                    <option value="12">Охотское</option>
+                    <option value="13">Японское</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Год</h3>
+                <select id="year" class="list">
+                    <option value="0">2018</option>
+                    <option value="1">2019</option>
+                    <option value="2">2020</option>
+                    <option value="3">2021</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Налоговая база</h3>
+                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+            </div>
+
+            <!-- 17 - 21-->
+            <div class="item">
+                <h3 class="item-name">Бассейн реки, озера, моря</h3>
+                <select id="sea" class="list">
+                    <option value="0">Балтийское</option>
+                    <option value="1">Белое</option>
+                    <option value="2">Баренцево</option>
+                    <option value="3">Азовское</option>
+                    <option value="4">Черное</option>
+                    <option value="5">Каспийское</option>
+                    <option value="6">Карское</option>
+                    <option value="7">Лаптевых</option>
+                    <option value="8">Восточно-Сибирское</option>
+                    <option value="9">Чукотское</option>
+                    <option value="10">Берингово</option>
+                    <option value="11">Тихий океан</option>
+                    <option value="12">Охотское</option>
+                    <option value="13">Японское</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Год</h3>
+                <select id="year" class="list">
+                    <option value="0">2018</option>
+                    <option value="1">2019</option>
+                    <option value="2">2020</option>
+                    <option value="3">2021</option>
+                </select>
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Налоговая база</h3>
+                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+            </div>
+
+            <div class="item">
+                <h3 class="item-name">Длина сплава в сотнях км.</h3>
+                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
             <button class="btn" onclick="getResult()">Посчитать налог</button>
