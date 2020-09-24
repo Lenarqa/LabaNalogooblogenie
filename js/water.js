@@ -92,6 +92,7 @@ function CloseAllItemList() {
     itemList.children[8].style.display = 'none';
     itemList.children[9].style.display = 'none';
     itemList.children[10].style.display = 'none';
+
     itemList.children[11].style.display = 'none';
     itemList.children[12].style.display = 'none';
     itemList.children[13].style.display = 'none';
@@ -103,6 +104,7 @@ function CloseAllItemList() {
     itemList.children[19].style.display = 'none';
     itemList.children[20].style.display = 'none';
     itemList.children[21].style.display = 'none';
+    itemList.children[22].style.display = 'none';
 }
 
 window.onload = () => {
@@ -134,6 +136,7 @@ function ChangeNalog() {
     let itemList = document.getElementById("item-list");
     switch (nalogValue) {
         case '0':
+            CloseAllItemList();
             itemList.children[1].style.display = 'flex';
             itemList.children[2].style.display = 'flex';
             itemList.children[3].style.display = 'flex';
@@ -142,14 +145,17 @@ function ChangeNalog() {
             itemList.children[6].style.display = 'flex';
             itemList.children[7].style.display = 'flex';
             itemList.children[8].style.display = 'flex';
+            itemList.children[9].style.display = 'flex';
+            // itemList.children[22].style.display = 'flex';
             break;
         case '1':
             CloseAllItemList();
-            itemList.children[9].style.display = 'flex';
             itemList.children[10].style.display = 'flex';
             itemList.children[11].style.display = 'flex';
             itemList.children[12].style.display = 'flex';
             itemList.children[13].style.display = 'flex';
+            itemList.children[14].style.display = 'flex';
+            itemList.children[15].style.display = 'flex';
             break;
         case '2':
             CloseAllItemList();
@@ -378,5 +384,23 @@ function getResult() {
                 `;
         }
     }
+    }
+}
+
+// акватория
+let acvatoriiSea = [33.84, 27.72, 30.71, 44.88, 49.80, 42.24, 15.72, 15.12, 15, 14.04, 26.16, 29.28, 35.28, 38.52];
+
+function ChangeWaterPointAcvatorii() {
+    let acvatoriiWaterPoint = document.getElementById('waterPointAcvatorii').value;
+    let itemList = document.getElementById("item-list");
+    switch (acvatoriiWaterPoint) {
+        case '0':
+            itemList.children[11].style.display = 'flex';
+            itemList.children[12].style.display = 'none';
+            break;
+        case '1':
+            itemList.children[11].style.display = 'none';
+            itemList.children[12].style.display = 'flex';
+            break;
     }
 }

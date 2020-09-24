@@ -43,8 +43,8 @@
                 <h2>Важно: все дробные числа нужно писать через точку (3.2)</h2>
                 <h2>Для подсчета налога выбирите:</h2>
             </div>
-            <!-- 1-8 -->
-            <div class="item">
+
+            <div class="item"><!-- 1 -->
                 <h3 class="item-name">Забор воды из:</h3>
                 <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
                     <option value="0">Озера, реки</option>
@@ -52,17 +52,17 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 2 -->
                 <h3 class="item-name">Налоговая база</h3>
                 <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 3 -->
                 <h3 class="item-name">Годовая норма</h3>
                 <input id="yearNorma" class="item-input" type="text" placeholder="Например: 1500">
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 4 -->
                 <h3 class="item-name">Экономический район</h3>
                 <select id="region" class="list" onchange="ChangeRegion()">
                     <option value="0">Северный</option>
@@ -80,12 +80,12 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 5 -->
                 <h3 class="item-name">Бассейн реки, озера</h3>
                 <select id="pool" class="list"></select>
             </div>
             
-            <div class="item">
+            <div class="item"><!-- 6 -->
                 <h3 class="item-name">Забор воды</h3>
                 <select id="waterFrom" class="list">
                     <option value="0">Из поверхностных</option>
@@ -93,7 +93,7 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 7 -->
                 <h3 class="item-name">Море</h3>
                 <select id="sea" class="list">
                     <option value="0">Балтийское</option>
@@ -113,7 +113,7 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 8 -->
                 <h3 class="item-name">Год</h3>
                 <select id="year" class="list">
                     <option value="0">2018</option>
@@ -123,18 +123,21 @@
                 </select>
             </div>
 
-            <!-- 9 - 13-->
-            <div class="item">
+            <button class="btn" onclick="getResult()">Посчитать налог</button><!-- 9 -->
+
+
+            <!-- 10 - 14 акватория-->
+            <div class="item"><!-- 10 -->
                 <h3 class="item-name">Акватория</h3>
-                <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
+                <select id="waterPointAcvatorii" class="list" onchange="ChangeWaterPointAcvatorii()">
                     <option value="0">Экономический район</option>
                     <option value="1">Моря РФ</option>
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 11 -->
                 <h3 class="item-name">Экономический район</h3>
-                <select id="region" class="list" onchange="ChangeRegion()">
+                <select id="acvatorii-region" class="list" onchange="ChangeRegion()">
                     <option value="0">Северный</option>
                     <option value="1">Северо-Западный</option>
                     <option value="2">Центральный</option>
@@ -150,9 +153,9 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 12 -->
                 <h3 class="item-name">Море</h3>
-                <select id="sea" class="list">
+                <select id="acvatorii-sea" class="list">
                     <option value="0">Балтийское</option>
                     <option value="1">Белое</option>
                     <option value="2">Баренцево</option>
@@ -170,9 +173,9 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 13 -->
                 <h3 class="item-name">Год</h3>
-                <select id="year" class="list">
+                <select id="acvatorii-year" class="list">
                     <option value="0">2018</option>
                     <option value="1">2019</option>
                     <option value="2">2020</option>
@@ -180,12 +183,14 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 14 -->
                 <h3 class="item-name">Налоговая база</h3>
-                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+                <input id="acvatorii-baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
-            <!-- 14 - 16-->
+            <button class="btn" onclick="getResultAcvatorii()">Посчитать налог</button><!-- 15 -->
+
+            <!-- 14 - 16 -->
             <div class="item">
                 <h3 class="item-name">Бассейн реки, озера, моря</h3>
                 <select id="sea" class="list">
@@ -262,7 +267,7 @@
                 <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
-            <button class="btn" onclick="getResult()">Посчитать налог</button>
+            
         </div>
     </div>
 
