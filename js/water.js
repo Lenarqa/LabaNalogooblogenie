@@ -105,6 +105,12 @@ function CloseAllItemList() {
     itemList.children[20].style.display = 'none';
     itemList.children[21].style.display = 'none';
     itemList.children[22].style.display = 'none';
+    itemList.children[23].style.display = 'none';
+    itemList.children[24].style.display = 'none';
+    let result = document.getElementById('result');
+    if(result.innerText != ''){
+        result.innerText = '';
+    }
 }
 
 window.onload = () => {
@@ -159,17 +165,18 @@ function ChangeNalog() {
             break;
         case '2':
             CloseAllItemList();
-            itemList.children[14].style.display = 'flex';
-            itemList.children[15].style.display = 'flex';
             itemList.children[16].style.display = 'flex';
-            break;
-        case '3':
-            CloseAllItemList();
             itemList.children[17].style.display = 'flex';
             itemList.children[18].style.display = 'flex';
             itemList.children[19].style.display = 'flex';
+            break;
+        case '3':
+            CloseAllItemList();
             itemList.children[20].style.display = 'flex';
             itemList.children[21].style.display = 'flex';
+            itemList.children[22].style.display = 'flex';
+            itemList.children[23].style.display = 'flex';
+            itemList.children[24].style.display = 'flex';
             break;
     }
 }
@@ -284,6 +291,7 @@ function ChangeRegion() {
     }
 }
 
+// забор воды из водных объектов
 function getResult() {
     let bazaValue = document.getElementById('baza').value;
     let yearNorma = document.getElementById('yearNorma').value;
@@ -406,32 +414,83 @@ function ChangeWaterPointAcvatorii() {
 
 function getResultAcvatorii() {
     let acvatoriiWaterPoint = document.getElementById('waterPointAcvatorii').value;
+    let year = document.getElementById('acvatorii-year').value;
+    let baza = document.getElementById('acvatorii-baza').value;
+    let nalog = 0;
     switch (acvatoriiWaterPoint) {
         case '0':
             let acvatoriiRegionValue = document.getElementById('acvatorii-region').value;
-            let year = document.getElementById('acvatorii-year').value;
-            let baza = document.getElementById('acvatorii-baza').value;
-            let nalog = acvatoriiRegion[acvatoriiRegionValue] * yearKoef[year] * baza;
-
-            let result = document.getElementById('result');
-            if(result.innerText != ''){
-                result.innerText = '';
-                result.innerHTML = `
-                    <div class="left">
-                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
-                    </div>
-                    `;
-            }else{
-                result.innerHTML = `
-                    <div class="left">
-                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
-                    </div>
-                    `;
-            }
+            nalog = acvatoriiRegion[acvatoriiRegionValue] * yearKoef[year] * baza;
             break;
         case '1':
-            itemList.children[11].style.display = 'none';
-            itemList.children[12].style.display = 'flex';
+            let seaId = document.getElementById('acvatorii-sea').value;
+            nalog = acvatoriiSea[seaId] * yearKoef[year] * baza;
             break;
     }
+
+    let result = document.getElementById('result');
+    if(result.innerText != ''){
+        result.innerText = '';
+        result.innerHTML = `
+            <div class="left">
+                <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+            </div>
+            `;
+    }else{
+        result.innerHTML = `
+            <div class="left">
+                <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+            </div>
+            `;
+    }
+}
+
+// Гидроэнергетика
+let gidroEnergyKoef = [8.76, 8.76, 9, 8.88, 8.76, 9, 8.76, 9.24, 9.84, 9.72, 13.7, 8.88, 
+    13.5, 12.3, 7.2, 8.4, 8.52, 13.2, 8.52, 10.44, 4.8];
+function getResultGidroEnergy() {
+    let regionId = document.getElementById('gidroEnergy-sea').value;
+    let year = document.getElementById('gidroEnergy-year').value;
+    let baza = document.getElementById('gidroEnergy-baza').value;
+    let nalog = gidroEnergyKoef[regionId] * yearKoef[year] * baza;
+    let result = document.getElementById('result');
+    if(result.innerText != ''){
+        result.innerText = '';
+        result.innerHTML = `
+            <div class="left">
+                <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+            </div>
+            `;
+    }else{
+        result.innerHTML = `
+            <div class="left">
+                <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+            </div>
+            `;
+    }
+}
+
+// лесосплав
+let waterForestKoef = [1656, 1705.2, 1552.8, 1650, 1454.4, 1554, 1476, 1636.8, 1585.8, 1576.8, 1183.2];
+function getResultWaterForest() {
+    let gidroEnergyId = document.getElementById('gidroEnergy-sea').value;
+    let year = document.getElementById('gidroEnergy-year').value;
+    let baza = document.getElementById('gidroEnergy-baza').value;
+
+    let nalog = waterForestKoef[gidroEnergyId] * yearKoef[year] * baza;
+    let result = document.getElementById('result');
+    if(result.innerText != ''){
+        result.innerText = '';
+        result.innerHTML = `
+            <div class="left">
+                <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+            </div>
+            `;
+    }else{
+        result.innerHTML = `
+            <div class="left">
+                <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+            </div>
+            `;
+    } 
 }

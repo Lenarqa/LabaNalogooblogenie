@@ -190,30 +190,38 @@
 
             <button class="btn" onclick="getResultAcvatorii()">Посчитать налог</button><!-- 15 -->
 
-            <!-- 14 - 16 -->
-            <div class="item">
+            <!-- Гидроэнергетика -->
+            <div class="item"><!-- 16 -->
                 <h3 class="item-name">Бассейн реки, озера, моря</h3>
-                <select id="sea" class="list">
-                    <option value="0">Балтийское</option>
-                    <option value="1">Белое</option>
-                    <option value="2">Баренцево</option>
-                    <option value="3">Азовское</option>
-                    <option value="4">Черное</option>
-                    <option value="5">Каспийское</option>
-                    <option value="6">Карское</option>
-                    <option value="7">Лаптевых</option>
-                    <option value="8">Восточно-Сибирское</option>
-                    <option value="9">Чукотское</option>
-                    <option value="10">Берингово</option>
-                    <option value="11">Тихий океан</option>
-                    <option value="12">Охотское</option>
-                    <option value="13">Японское</option>
+                <select id="gidroEnergy-sea" class="list">
+                    <option value="0">Нева</option>
+                    <option value="1">Неман</option>
+                    <option value="2">Реки бассейнов Ладожского и Онежского озер и озера Ильмень</option>
+                    <option value="3">Прочие реки бассейна Балтийского моря</option>
+                    <option value="4">Северная Двина</option>
+                    <option value="5">Прочие реки бассейна Белого моря</option>
+                    <option value="6">Реки бассейна Белого моря</option>
+                    <option value="7">Реки бассейна Баренцева моря</option>
+                    <option value="8">Амур</option>
+                    <option value="9">Волга</option>
+                    <option value="10">Дон</option>
+                    <option value="11">Енисей</option>
+                    <option value="12">Кубань</option>
+                    <option value="13">Лена</option>
+                    <option value="14">Обь</option>
+                    <option value="15">Сулак</option>
+                    <option value="16">Терек</option>
+                    <option value="17">Урал</option>
+                    <option value="18">Бассейн озера Байкал и река Ангара</option>
+                    <option value="19">Реки бассейна Восточно-Сибирского моря</option>
+                    <option value="20">Реки бассейнов Чукотского и Берингова морей</option>
+                    <option value="21">Прочие реки и озера</option>
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 17 -->
                 <h3 class="item-name">Год</h3>
-                <select id="year" class="list">
+                <select id="gidroEnergy-year" class="list">
                     <option value="0">2018</option>
                     <option value="1">2019</option>
                     <option value="2">2020</option>
@@ -221,35 +229,35 @@
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 18 -->
                 <h3 class="item-name">Налоговая база</h3>
-                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+                <input id="gidroEnergy-baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
-            <!-- 17 - 21-->
-            <div class="item">
+            <button class="btn" onclick="getResultGidroEnergy()">Посчитать налог</button><!-- 19 -->
+
+            <!-- Лесосплав -->
+            <div class="item"><!-- 20 -->
                 <h3 class="item-name">Бассейн реки, озера, моря</h3>
-                <select id="sea" class="list">
-                    <option value="0">Балтийское</option>
-                    <option value="1">Белое</option>
-                    <option value="2">Баренцево</option>
-                    <option value="3">Азовское</option>
-                    <option value="4">Черное</option>
-                    <option value="5">Каспийское</option>
-                    <option value="6">Карское</option>
-                    <option value="7">Лаптевых</option>
-                    <option value="8">Восточно-Сибирское</option>
-                    <option value="9">Чукотское</option>
-                    <option value="10">Берингово</option>
-                    <option value="11">Тихий океан</option>
-                    <option value="12">Охотское</option>
-                    <option value="13">Японское</option>
+                <select id="gidroEnergy-sea" class="list">
+                    <option value="0">Нева</option>
+                    <option value="1">Реки бассейнов Ладожского и Онежского озер и озера Ильмень</option>
+                    <option value="2">Прочие реки бассейна Балтийского моря</option>
+                    <option value="3">Северная Двина</option>
+                    <option value="4">Прочие реки бассейна Белого моря</option>
+                    <option value="5">Печора</option>
+                    <option value="6">Амур</option>
+                    <option value="7">Волга</option>
+                    <option value="8">Енисей</option>
+                    <option value="9">Лена</option>
+                    <option value="10">Обь</option>
+                    <option value="11">Прочие реки и озера, по которым ос-ся сплав в плотах и кошелях</option>
                 </select>
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 21 -->
                 <h3 class="item-name">Год</h3>
-                <select id="year" class="list">
+                <select id="gidroEnergy-year" class="list">
                     <option value="0">2018</option>
                     <option value="1">2019</option>
                     <option value="2">2020</option>
@@ -257,16 +265,17 @@
                 </select>
             </div>
 
-            <div class="item">
-                <h3 class="item-name">Налоговая база</h3>
-                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+            <div class="item"><!-- 22 -->
+                <h3 class="item-name">Налоговая база в тыс. куб. м.</h3>
+                <input id="gidroEnergy-baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
-            <div class="item">
+            <div class="item"><!-- 23 -->
                 <h3 class="item-name">Длина сплава в сотнях км.</h3>
-                <input id="baza" class="item-input" type="text" placeholder="Например: 20000">
+                <input id="gidroEnergy-baza" class="item-input" type="text" placeholder="Например: 20000">
             </div>
 
+            <button class="btn" onclick="getResultWaterForest()">Посчитать налог</button><!-- 24 -->
             
         </div>
     </div>
