@@ -288,8 +288,6 @@ function getResult() {
     let bazaValue = document.getElementById('baza').value;
     let yearNorma = document.getElementById('yearNorma').value;
     let yearValue = document.getElementById('year').value;
-    console.log(bazaValue);
-    console.log(yearKoef[yearValue]);
     // забор воды из водных объектов
     if(baza > yearNorma) {
         if(waterPointValue == '0') {
@@ -364,30 +362,31 @@ function getResult() {
                     `;
             }
        } else if(waterPointValue == '1') {
-        let seaValue = document.getElementById('sea').value;
-        console.log(seaValue);
-        let nalog = bazaValue * nalogStavkaSea[seaValue] * yearKoef[yearValue] * 5 / 1000;
+            let seaValue = document.getElementById('sea').value;
+            console.log(seaValue);
+            let nalog = bazaValue * nalogStavkaSea[seaValue] * yearKoef[yearValue] * 5 / 1000;
 
-        let result = document.getElementById('result');
-        if(result.innerText != ''){
-            result.innerText = '';
-            result.innerHTML = `
-                <div class="left">
-                    <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
-                </div>
-                `;
-        }else{
-             result.innerHTML = `
-                <div class="left">
-                    <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
-                </div>
-                `;
+            let result = document.getElementById('result');
+            if(result.innerText != ''){
+                result.innerText = '';
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }else{
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }
         }
-    }
     }
 }
 
 // акватория
+let acvatoriiRegion = [32.16, 33.96, 30.84, 29.04, 30.12, 30.48, 34.44, 32.04, 30.24, 28.2, 31.32, 30.84];
 let acvatoriiSea = [33.84, 27.72, 30.71, 44.88, 49.80, 42.24, 15.72, 15.12, 15, 14.04, 26.16, 29.28, 35.28, 38.52];
 
 function ChangeWaterPointAcvatorii() {
@@ -397,6 +396,38 @@ function ChangeWaterPointAcvatorii() {
         case '0':
             itemList.children[11].style.display = 'flex';
             itemList.children[12].style.display = 'none';
+            break;
+        case '1':
+            itemList.children[11].style.display = 'none';
+            itemList.children[12].style.display = 'flex';
+            break;
+    }
+}
+
+function getResultAcvatorii() {
+    let acvatoriiWaterPoint = document.getElementById('waterPointAcvatorii').value;
+    switch (acvatoriiWaterPoint) {
+        case '0':
+            let acvatoriiRegionValue = document.getElementById('acvatorii-region').value;
+            let year = document.getElementById('acvatorii-year').value;
+            let baza = document.getElementById('acvatorii-baza').value;
+            let nalog = acvatoriiRegion[acvatoriiRegionValue] * yearKoef[year] * baza;
+
+            let result = document.getElementById('result');
+            if(result.innerText != ''){
+                result.innerText = '';
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }else{
+                result.innerHTML = `
+                    <div class="left">
+                        <h2>Сумма налога: ${nalog.toFixed(2)}</h2>
+                    </div>
+                    `;
+            }
             break;
         case '1':
             itemList.children[11].style.display = 'none';
