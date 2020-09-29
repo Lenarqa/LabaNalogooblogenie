@@ -44,3 +44,7 @@ select {
     appearance: none;
     width: 60%;
 }
+
+#greenSizeItem {
+    display: none;
+}

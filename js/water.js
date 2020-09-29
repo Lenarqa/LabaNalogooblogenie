@@ -420,11 +420,11 @@ function getResultAcvatorii() {
     switch (acvatoriiWaterPoint) {
         case '0':
             let acvatoriiRegionValue = document.getElementById('acvatorii-region').value;
-            nalog = acvatoriiRegion[acvatoriiRegionValue] * yearKoef[year] * baza;
+            nalog = acvatoriiRegion[acvatoriiRegionValue] * yearKoef[year] * baza / 4;
             break;
         case '1':
             let seaId = document.getElementById('acvatorii-sea').value;
-            nalog = acvatoriiSea[seaId] * yearKoef[year] * baza;
+            nalog = acvatoriiSea[seaId] * yearKoef[year] * baza / 4;
             break;
     }
 
@@ -474,10 +474,17 @@ function getResultGidroEnergy() {
 let waterForestKoef = [1656, 1705.2, 1552.8, 1650, 1454.4, 1554, 1476, 1636.8, 1585.8, 1576.8, 1183.2];
 function getResultWaterForest() {
     let gidroEnergyId = document.getElementById('gidroEnergy-sea').value;
-    let year = document.getElementById('gidroEnergy-year').value;
-    let baza = document.getElementById('gidroEnergy-baza').value;
+    let year = document.getElementById('gidroEnergy-year1').value;
+    let baza = document.getElementById('gidroEnergy-baza1').value;
+    let long = document.getElementById('gidroEnergy-long').value;
+    console.log('-------------------------------------------');
+    console.log(waterForestKoef[gidroEnergyId]);
+    console.log(yearKoef[year]);
+    console.log(baza);
 
-    let nalog = waterForestKoef[gidroEnergyId] * yearKoef[year] * baza;
+    let nalog = waterForestKoef[gidroEnergyId] * yearKoef[year] * baza * long;
+
+    
     let result = document.getElementById('result');
     if(result.innerText != ''){
         result.innerText = '';
