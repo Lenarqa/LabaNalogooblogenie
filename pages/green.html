@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="../css/green.css">
+    <title>Земельный налог</title>
+</head>
+<body>
+    <header class="header">
+        <div class="autors">
+            <h2>Выполняли:</h2>
+            <h2>Жукова Ксения</h2>
+            <h2>Валиев Ленар</h2>
+            <h2>Группа: 447-1</h2>
+        </div>
+
+        <div class="header-name">Земельный налог</div>
+
+        <div class="logo">
+            <h2 class="main-text">Тусур</h2>
+            <div class="small-logo-text">
+                <h2>Tusur</h2>
+                <h2>university</h2>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="item-list" id="item-list">
+            <div class="item-list-text">
+                <h2>Важно: все дробные числа нужно писать через точку (3.2)</h2>
+                <h2>Для подсчета налога выбирите:</h2>
+            </div>
+            
+            <div class="item"><!-- 1 -->
+                <h3 class="item-name">Дата возникновения</h3>
+                <h3 class="item-name">права собственности</h3>
+                <input id="date" class="item-input" type="date" >
+            </div>
+
+            <div class="item"><!-- 2 -->
+                <h3 class="item-name">Категория налогоплательщика</h3>
+                <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
+                    <option value="0">Никакая из нижеперечисленных</option>
+                    <option value="1">Герой Советского Союза, Герой Российской Федерации</option>
+                    <option value="2">Пенсионер или лицо достигших возраста 60 и 55 лет (соответственно м и ж), 
+                        которым выплачивается ежемесячное пожизненное содержание.
+                    </option>
+
+                    <option value="3">Ветеран или инвалид ВОВ.</option>
+                    <option value="4">физических лиц, имеющих трех и более несовершеннолетних детей.и т.д.</option>
+                </select>
+            </div>
+
+            <div class="item"><!-- 2 -->
+                <h3 class="item-name">Вид земельного участка</h3>
+                <select id="waterPoint" class="list" onchange="ChangeWaterPoint()">
+                    <option value="1.5">Прочих земельные участки.</option>
+                    <option value="0.3">Земли сельскохозяйственного назначения.
+                    </option>
+                    <option value="0.3">Занятых жилищным фондом и объектами инженерной 
+                        инфраструктуры или приобретенных для жилищного строительства.
+                    </option>
+                    <option value="0.3">Земли для обеспечения обороны, безопасности и таможенных нужд.</option>
+                </select>
+            </div>
+
+           
+
+            <button class="btn" onclick="getResult()">Посчитать налог</button>
+        </div>
+    </div>
+
+    <div id="result">
+        
+    </div>
+
+    
+    <footer class="footer">
+        <div class="back"><a href="../index.html">Главное меню</a></div>
+        <img src="../img/logo.png" alt="logo-tusur">
+    </footer>
+
+    <script src="../js/green.js"></script>
+</body>
+</html>
