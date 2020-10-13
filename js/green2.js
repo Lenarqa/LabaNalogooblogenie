@@ -261,7 +261,7 @@ function getRes() {
                     moungthVladenia2[2] = 3;
                     break;
                 default:
-                    moungthVladenia2[1] = 3;
+                    moungthVladenia2[2] = 3;
                     break;
             }
         }else {
