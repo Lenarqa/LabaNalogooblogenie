@@ -1,4 +1,6 @@
-function getResult1() {
+function getRes() {
+    console.log('Good');
+
     let greenCost = document.getElementById('greenCost').value; //кадастровая стоимость
     let dateReg = document.getElementById('date');//дата регистрации
     let dateEnd = document.getElementById('dateEnd');//дата потери
@@ -17,24 +19,10 @@ function getResult1() {
     let lastMounght = 0;
 
     lastMounght = dayEnd > 15 ? mounthEnd : mounthEnd-1;
-    
+    console.log("lastMoungth " + lastMounght);
 
-    //находим количество месяцев во владении
-    if(dayEnd >= 15){
-        if(dayReg <= 15){
-            moungthTotal = mounthEnd - mounthReg + 1;//оба месяца учитываются и начальный и конечный
-        }else {
-            moungthTotal = mounthEnd - mounthReg;// начальный месяц не учитывается
-        }
-    }else {
-        if(dayReg <= 15) {
-            moungthTotal = mounthEnd - mounthReg;//начальный месяц учитывается, конечный не учитывается
-        }else {
-            moungthTotal = mounthEnd - mounthReg - 1;//начальный и конечный месяц не учитываются
-        }
-    }
-
-    if(dayReg <= 15) {
+    // 1 квартал
+    if(dayReg < 15) {
         switch(mounthReg) {
             case 1: 
                 moungthVladenia[0] = 3;
@@ -44,7 +32,10 @@ function getResult1() {
                 break;
             case 3: 
                 moungthVladenia[0] = 1;
-                break;       
+                break;
+            default:
+                moungthVladenia[0] = 0;
+                break;
         }
     }else {
         switch(mounthReg) {
@@ -56,10 +47,14 @@ function getResult1() {
                 break;
             case 3: 
                 moungthVladenia[0] = 0;
+                break;
+            default:
+                moungthVladenia[0] = 0;
                 break;       
         }
     }
 
+    // 2 квартал
     if(moungthVladenia[0] <= 3 && moungthVladenia[0] != 0) {
         moungthVladenia[1] = 3;
     }else {
@@ -73,7 +68,10 @@ function getResult1() {
                     break;
                 case 6: 
                     moungthVladenia[1] = 1;
-                    break;       
+                    break;
+                default:
+                    moungthVladenia[1] = 0;
+                    break;         
             }
         }else {
             switch(mounthReg) {
@@ -85,11 +83,15 @@ function getResult1() {
                     break;
                 case 6: 
                     moungthVladenia[1] = 0;
-                    break;       
+                    break;  
+                default:
+                    moungthVladenia[1] = 0;
+                    break;        
             }
         }
     }
 
+    // 3 квартал
     if(moungthVladenia[1] <= 3 && moungthVladenia[1] != 0) {
         moungthVladenia[2] = 3;
     }else {
@@ -103,6 +105,9 @@ function getResult1() {
                     break;
                 case 9: 
                     moungthVladenia[2] = 1;
+                    break; 
+                default:
+                    moungthVladenia[2] = 0;
                     break;       
             }
         }else {
@@ -115,12 +120,16 @@ function getResult1() {
                     break;
                 case 9: 
                     moungthVladenia[2] = 0;
-                    break;       
+                    break;
+                default:
+                    moungthVladenia[2] = 0;
+                break;       
             }
         }
     }
 
-    if(moungthVladenia[3] <= 3 && moungthVladenia[2] != 0) {
+    // 4 квартал
+    if(moungthVladenia[2] <= 3 && moungthVladenia[2] != 0) {
         moungthVladenia[3] = 3;
     }else {
         if(dayReg <= 15) {
@@ -133,7 +142,10 @@ function getResult1() {
                     break;
                 case 12: 
                     moungthVladenia[3] = 1;
-                    break;       
+                    break;
+                default:
+                    moungthVladenia[2] = 0;
+                    break;           
             }
         }else {
             switch(mounthReg) {
@@ -145,16 +157,20 @@ function getResult1() {
                     break;
                 case 12: 
                     moungthVladenia[3] = 0;
-                    break;       
+                    break;  
+                default:
+                    moungthVladenia[3] = 0;
+                    break;          
             }
         }
     }
+    console.log("moungthVladenia " + moungthVladenia);
 
-    console.log("moungVlad" = moungthVladenia);
     // 2 шаг
+    //1 квартал
     if(moungthVladenia[0] < 3) {
         moungthVladenia2[0] = moungthVladenia[0];
-    }else {
+    }else{
         if(dayEnd >= 15) {
             switch (lastMounght) {
                 case 1:
@@ -188,8 +204,11 @@ function getResult1() {
         }
     }
 
+    // 2 квартал
     if(moungthVladenia[1] < 3) {
         moungthVladenia2[1] = moungthVladenia[1];
+    }else if(lastMounght <= 3){
+        moungthVladenia2[1] = 0;
     }else {
         if(dayEnd <= 15) {
             switch (lastMounght) {
@@ -224,9 +243,12 @@ function getResult1() {
         }
     }
 
+    //3 квартал 
     if(moungthVladenia[2] < 3) {
         moungthVladenia2[2] = moungthVladenia[2];
-    }else {
+    }else if(lastMounght <= 6){
+        moungthVladenia2[2] = 0;
+    }else{
         if(dayEnd <= 15) {
             switch (lastMounght) {
                 case 7:
@@ -260,9 +282,12 @@ function getResult1() {
         }
     }
 
+    // 4 квартал
     if(moungthVladenia[3] < 3) {
         moungthVladenia2[3] = moungthVladenia[3];
-    }else {
+    }else if(lastMounght <= 9){
+        moungthVladenia2[3] = 0;
+    }else{
         if(dayEnd <= 15) {
             switch (lastMounght) {
                 case 10:
@@ -295,30 +320,45 @@ function getResult1() {
             }
         }
     }
+    console.log("mounghtVladenia2 = " + moungthVladenia2);
 
-    console.log(moungthTotal + " =========================")
-    console.log(moungthVladenia + "=========");
-    console.log(moungthVladenia2 + '=======');
     nalogKoef = document.getElementById('nalogKoef').value;
-    
+    let dola = document.getElementById('dola').value;
+
+    avancePay[0] = (1/4) * (greenCost * dola) * nalogKoef * (moungthVladenia2[0]/3) * buildKoef * 1000000;
+    avancePay[1] = (1/4) * (greenCost * dola) * nalogKoef * (moungthVladenia2[1]/3) * buildKoef * 1000000;
+    avancePay[2] = (1/4) * (greenCost * dola) * nalogKoef * (moungthVladenia2[2]/3) * buildKoef * 1000000;
+    moungthTotal = moungthVladenia2.reduce((sum, el) => {
+        return sum += el;
+    })
+    console.log("avance pay = " + avancePay);
+    // console.log("avance pay = " + avancePay);
 
     if(category == 0) {
-        nalogSize = (greenCost * nalogKoef * buildKoef * (moungthTotal/12) - avancePay[0] - avancePay[1] - avancePay[2]) * 1000000;
+        console.log("1 categori");
+        console.log("GreenCost = " + greenCost);
+        console.log("Dola = " + dola);
+        console.log("nalogKoef = " + nalogKoef);
+        console.log('mounghTotal = ' + moungthTotal)
+        console.log("buildKoef = " + buildKoef);
+        // nalogSize = (greenCost * 1000000 * nalogKoef * buildKoef * (moungthTotal/12) - avancePay[0] - avancePay[1] - avancePay[2]);
+        nalogSize = (greenCost * dola) * nalogKoef * (moungthTotal/12) * buildKoef * 1000000 - avancePay[0] - avancePay[1] - avancePay[2];
     }else{
         //Налоговая база уменьшается на величину 
         //кадастровой стоимости 600 квадратных метров площади земельного участка
         let greenSize = document.getElementById('greenSize').value;
-        avancePay = avancePay.map(el => el = 0)
-        nalogSize = ((greenCost * ((greenSize-600)/greenSize)) * nalogKoef * buildKoef * (moungthTotal/12)) * 1000000;
+        avancePay = avancePay.map(el => el = 0);
+        console.log("2 categori");
+        console.log("GreenSize = " + greenSize);
+        console.log("GreenCost = " + greenCost);
+        console.log("nalogKoef = " + nalogKoef);
+        console.log("buildKoef = " + buildKoef);
+        console.log('mounghTotal = ' + moungthTotal)
+        // nalogSize = ((greenCost * ((greenSize-600)/greenSize)) * nalogKoef * buildKoef * (moungthTotal/12)) * 1000000;
+        nalogSize = ((greenSize - 600) * (greenCost/greenSize)) * nalogKoef * buildKoef * (moungthTotal/12) * 1000000;
     }
-    // console.log(greenCost);
-    // console.log("День = " + dayReg + " Месяц = " + mounthReg + " Всего месяцев = " + moungthTotal);
-    // console.log(category);
-    // console.log(nalogKoef);
-
-    // avancePay = avancePay.map(el => el*= 1000000);
-    // console.log('avancePay = ', avancePay);
-    // console.log('nalog = ', nalogSize);
+    
+    console.log("NalogSize = " + nalogSize);
 
     let result = document.getElementById('result');
     if(result.innerText != ''){

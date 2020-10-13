@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <link rel="stylesheet" href="../css/green.css">
+    <script src="../js/green.js"></script>
+    <script src="../js/green2.js"></script>
     <title>Земельный налог</title>
 </head>
 <body>
@@ -38,6 +40,11 @@
             <div class="item">
                 <h3 class="item-name">Кадастровая стоимость (млн.руб)</h3>
                 <input id="greenCost" class="item-input" type="text" placeholder="Например: 3.5">
+            </div>
+            
+            <div class="item">
+                <h3 class="item-name">Доля налогоплательщика</h3>
+                <input id="dola" class="item-input" type="text" placeholder="Например: 0.5, максимум 1">
             </div>
             
             <div class="item">
@@ -97,7 +104,7 @@
 
            
 
-            <button class="btn" onclick="getResult()">Посчитать налог</button>
+            <button class="btn" onclick="getRes()">Посчитать налог</button>
         </div>
     </div>
 
@@ -111,6 +118,6 @@
         <img src="../img/logo.png" alt="logo-tusur">
     </footer>
 
-    <script src="../js/green.js"></script>
+    
 </body>
 </html>
